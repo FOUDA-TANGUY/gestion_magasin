@@ -9,5 +9,6 @@ typedef enum bool
 }bool;
 
 #define MAX 15
+#define SIZE 1000
 
 #endif
