@@ -124,16 +124,9 @@ void supprimerProduit(void)
         printf("Erreur d'ouverture %s ", FILE_PRODUIT);
         exit(-1);
     }
-    while((i<nombre_produit) && (!trouver))
-    {
-        if(strcmp((TAB[i].code,code) == 0) && (!trouver))
-            trouver = 1;
-        else
-            i++;
-    }
-    if(trouver)
-    {
-        
-    }
+    for(i=0 ; i<nombre_produit ; i++)
+        if(strcmp(TAB[i].code , code)!=0)
+            saveProduits(F, TAB,nombre_produit);
+    fclose(F);
 }
 // partie implementation des fonction du client
