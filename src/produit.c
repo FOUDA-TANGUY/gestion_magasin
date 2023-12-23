@@ -99,5 +99,39 @@ void modifierProduit(void)
         printf("Aucun produit ne porte le code designer\n");
     fclose(F);
 }
-
+void supprimerProduit(void)
+{
+    produit TAB[SIZE];
+    char code[MAX];
+    bool trouver;
+    int nombre_produit;
+    FILE* F=fopen(FILE_PRODUIT, "r");
+    if(F==NULL)
+    {
+        printf("Erreur d'ouverture : %s\n", FILE_PRODUIT);
+        exit(-1);
+    }
+    nombre_produit = getProduits(F, TAB);
+    fclose(F);
+    printf("Entrez le code du produit : ");
+    scanf("%s", code);
+    int i;
+    F = fopen(FILE_PRODUIT , "w");
+    if(F==NULL)
+    {
+        printf("Erreur d'ouverture %s ", FILE_PRODUIT);
+        exit(-1);
+    }
+    while((i<nombre_produit) && (!trouver))
+    {
+        if(strcmp((TAB[i].code,code) == 0) && (!trouver))
+            trouver = 1;
+        else
+            i++;
+    }
+    if(trouver)
+    {
+        
+    }
+}
 // partie implementation des fonction du client
