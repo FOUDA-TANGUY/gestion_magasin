@@ -5,7 +5,7 @@
 int main(void)
 {
     int choix_user = 0;
-
+    system("clear");
     do
     {
         printf(" 01 - Gestion Articles\n");
@@ -22,28 +22,36 @@ int main(void)
         switch (choix_user)
         {
         case 1:
+            system("clear");
             gestionArticle();
             break;
         case 2:
+            system("clear");
             gestionClients();
             break;
-        case 3: 
+        case 3:
+            system("clear"); 
             gestionVendeur();
             break;
         case 4:
+            system("clear");
             gestionCommande();
             break;
         case 5:
+            system("clear");
             etablirFActure();
             break;
         case 6:
+            system("clear");
             approvisionnement();
             break;
         case 7:
+            system("clear");
             paieVendeur();
             break;
 
         case 0:
+            system("clear");
             printf("Thank you !\n");
             break;
 
