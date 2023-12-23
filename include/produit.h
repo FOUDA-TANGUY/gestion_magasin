@@ -20,6 +20,6 @@ int getProduits(FILE*,produit*);
 void saveProduits(FILE*, produit*,int);
 void ajouterProduit(void);
 void modifierProduit(void);
-void supprimer(void);
+void supprimerProduit(void);
 
 #endif
