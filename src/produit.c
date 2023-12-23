@@ -52,18 +52,51 @@ void ajouterProduit(void)
 void modifierProduit(void)
 {
     produit TAB[SIZE];
+    char code[MAX];
     bool trouver;
     int nombre_produit;
     FILE* F=fopen(FILE_PRODUIT, "r");
     if(F==NULL)
     {
-        printf("Erreue d'ouverture : %s\n", FILE_PRODUIT);
+        printf("Erreur d'ouverture : %s\n", FILE_PRODUIT);
         exit(-1);
     }
     nombre_produit = getProduits(F, TAB);
     fclose(F);
-
-
+    printf("Entrez le code du produit : ");
+    scanf("%s", code);
+    int i;
+    F = fopen(FILE_PRODUIT , "w");
+    if(F==NULL)
+    {
+        printf("Erreur d'ouverture %s ", FILE_PRODUIT);
+        exit(-1);
+    }
+    while((i<nombre_produit) && (!trouver))
+    {
+        if(TAB[i].code == code)
+            trouver = 1;
+        else
+            i++;
+    }
+    if(trouver)
+    {
+        printf("modifier les informations du produit %s : \n\n", TAB[i].code);
+        printf("Entrez le code du produit : ");
+        scanf("%s", TAB[i].code);
+        printf("Entrez le nom du produit : ");
+        scanf("%s", TAB[i].nom_produit);
+        printf("Entrez la quantite en stock : ");
+        scanf("%d", &TAb[i].qte_stock);
+        printf("Entrez la quantite seuil : ");
+        scanf("%d", TAB[i].qte_seuil);
+        printf("Entrez le prix du produit ; ");
+        scanf("%d", &TAb[i].prix_unitaire);
+        saveProduits(F, &TAB);
+    }
+    else
+        printf("Aucun produit ne porte le code designer\n");
+    fclose(F);
 }
 
 // partie implementation des fonction du client
