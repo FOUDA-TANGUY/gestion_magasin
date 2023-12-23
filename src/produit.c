@@ -4,6 +4,7 @@
 #include <produit.h>
 #include<string.h>
 
+// partie implementation des fonction du client
 void saisirProduit(FILE* F,produit* p)
 {
     fprintf(F, "%s ; %s ; %d ; %d ; %d\n",p->code,p->nom_produit,p->qte_stock,p->qte_seuil,p->prix_unitaire);
@@ -105,7 +106,6 @@ void supprimerProduit(void)
 {
     produit TAB[SIZE];
     char code[MAX];
-    bool trouver;
     int nombre_produit;
     FILE* F=fopen(FILE_PRODUIT, "r");
     if(F==NULL)
@@ -129,4 +129,3 @@ void supprimerProduit(void)
             saveProduits(F, TAB,nombre_produit);
     fclose(F);
 }
-// partie implementation des fonction du client
