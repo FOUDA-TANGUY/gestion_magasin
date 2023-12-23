@@ -8,6 +8,6 @@ typedef enum bool
     false,true
 }bool;
 
-
+#define MAX 15
 
 #endif

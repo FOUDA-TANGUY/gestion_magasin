@@ -3,7 +3,7 @@
 
 // structure et foction en rapport avec le produit
 #define FILE_PRODUIT "donnee/produit.data"
-#define MAX 15
+
 
 typedef struct produit
 {
