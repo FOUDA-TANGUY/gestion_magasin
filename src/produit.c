@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <outil.h>
 #include <produit.h>
+#include<string.h>
 
 void saisirProduit(FILE* F,produit* p)
 {
@@ -74,7 +75,7 @@ void modifierProduit(void)
     }
     while((i<nombre_produit) && (!trouver))
     {
-        if(TAB[i].code == code)
+        if(strcmp((TAB[i].code,code) == 0) && (!trouver))
             trouver = 1;
         else
             i++;
@@ -87,12 +88,12 @@ void modifierProduit(void)
         printf("Entrez le nom du produit : ");
         scanf("%s", TAB[i].nom_produit);
         printf("Entrez la quantite en stock : ");
-        scanf("%d", &TAb[i].qte_stock);
+        scanf("%d", &TAB[i].qte_stock);
         printf("Entrez la quantite seuil : ");
-        scanf("%d", TAB[i].qte_seuil);
+        scanf("%d", &TAB[i].qte_seuil);
         printf("Entrez le prix du produit ; ");
-        scanf("%d", &TAb[i].prix_unitaire);
-        saveProduits(F, &TAB);
+        scanf("%d", &TAB[i].prix_unitaire);
+        saveProduits(F, TAB);
     }
     else
         printf("Aucun produit ne porte le code designer\n");
