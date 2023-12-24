@@ -93,3 +93,30 @@ void modifierVendeur(void)
         printf("Aucun vendeur n'est desiggner par ce matricule\n");
     fclose(F);
 }
+void supprimerVendeur(void)
+{
+    vendeur TAB[SIZE];
+    char matricule[MAX];
+    int nombre_vendeur;
+    FILE* F=fopen(FILE_VENDEUR, "r");
+    if(F==NULL)
+    {
+        printf("Erreur d'ouverture : %s\n", FILE_VENDEUR);
+        exit(-1);
+    }
+    nombre_vendeur = getProduits(F, TAB);
+    fclose(F);
+    printf("Entrez le matricule du vendeur : ");
+    scanf("%s", matricule);
+    int i;
+    F = fopen(FILE_VENDEUR , "w");
+    if(F==NULL)
+    {
+        printf("Erreur d'ouverture %s ", FILE_VENDEUR);
+        exit(-1);
+    }
+    for(i=0 ; i<nombre_vendeur ; i++)
+        if(strcmp(TAB[i].matricule_vendeur , matricule)!=0)
+            saveProduits(F, TAB,nombre_vendeur);
+    fclose(F);
+}
