@@ -104,7 +104,7 @@ void supprimerVendeur(void)
         printf("Erreur d'ouverture : %s\n", FILE_VENDEUR);
         exit(-1);
     }
-    nombre_vendeur = getProduits(F, TAB);
+    nombre_vendeur = getVendeurs(F, TAB);
     fclose(F);
     printf("Entrez le matricule du vendeur : ");
     scanf("%s", matricule);
@@ -117,6 +117,6 @@ void supprimerVendeur(void)
     }
     for(i=0 ; i<nombre_vendeur ; i++)
         if(strcmp(TAB[i].matricule_vendeur , matricule)!=0)
-            saveProduits(F, TAB,nombre_vendeur);
+            saveVendeurs(F, TAB,nombre_vendeur);
     fclose(F);
 }
