@@ -25,21 +25,20 @@ void gestionArticle(void)
         switch (choix_user)
         {
         case 1:
-            system("clear");
             ajouterProduit();
+            system("clear");
             break;
         case 2:
-            system("clear");
             modifierProduit();
+            system("clear");
             break;
         case 3:
-            system("clear"); 
             supprimerProduit();
+            system("clear");
             break;
 
         case 0:
             system("clear");
-            printf("Thank you !\n");
             break;
 
         default:
@@ -51,15 +50,120 @@ void gestionArticle(void)
 }
 void gestionClients(void)
 {
-    printf("comming soon \n");
+    int choix_user = 0;
+    system("clear");
+    do
+    {
+        printf(" 01 - Ajouter Client\n");
+        printf(" 02 - Modifier Client\n");
+        printf(" 03 - Supprimer Client\n");
+        printf(" 00 - Retour\n");
+
+        scanf("%d",&choix_user);
+
+        switch (choix_user)
+        {
+        case 1:
+            ajouterClient();
+            system("clear");
+            break;
+        case 2:
+            modifierCLient();
+            system("clear");
+            break;
+        case 3:
+            supprimerClient();
+            system("clear");
+            break;
+
+        case 0:
+            system("clear");
+            break;
+
+        default:
+            printf("Option invalide !!\n");
+            break;
+        }
+
+    } while (choix_user != 0);
 }
 void gestionVendeur(void)
 {
-    printf("comming soon \n");
+    int choix_user = 0;
+    system("clear");
+    do
+    {
+        printf(" 01 - Ajouter Vendeur\n");
+        printf(" 02 - Modifier Vendeur\n");
+        printf(" 03 - Supprimer Vendeur\n");
+        printf(" 00 - Retour\n");
+
+        scanf("%d",&choix_user);
+
+        switch (choix_user)
+        {
+        case 1:
+            ajouterVendeur();
+            system("clear");
+            break;
+        case 2:
+            modifierVendeur();
+            system("clear");
+            break;
+        case 3:
+            supprimerVendeur();
+            system("clear");
+            break;
+
+        case 0:
+            system("clear");
+            break;
+
+        default:
+            printf("Option invalide !!\n");
+            break;
+        }
+
+    } while (choix_user != 0);
 }
 void gestionCommande(void)
 {
-    printf("comming soon \n");
+    int choix_user = 0;
+    system("clear");
+    do
+    {
+        printf(" 01 - Ajouter Commande\n");
+        printf(" 02 - Modifier Commande\n");
+        printf(" 03 - Supprimer Commande\n");
+        printf(" 00 - Retour\n");
+
+        scanf("%d",&choix_user);
+
+        switch (choix_user)
+        {
+        case 1:
+            ajouterCommande();
+            system("clear");
+            break;
+        case 2:
+            modifierCommande();
+            system("clear");
+            break;
+        case 3:
+            supprimerCommande();
+            system("clear");
+            break;
+
+        case 0:
+            system("clear");
+            break;
+
+        default:
+            printf("Option invalide !!\n");
+            break;
+        }
+
+    } while (choix_user != 0);
 }
 void etablirFActure(void)
 {

@@ -26,7 +26,9 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 $(shell mkdir -p $(OBJDIR))
 
 run :
+	cd bin
 	./bin/$(TARGET)
+	cd ..
 
 # Règle pour nettoyer les fichiers objets et l'exécutable
 clean:
