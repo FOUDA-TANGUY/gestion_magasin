@@ -2,7 +2,7 @@
 #define __COMMANDE__H__
 
 // structure et foction en rapport avec le commande
-#define FILE_COMMMANDE "donnee/commande.data"
+#define FILE_COMMANDE "donnee/commande.data"
 
 typedef struct commande
 {
