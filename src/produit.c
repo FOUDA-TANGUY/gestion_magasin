@@ -67,7 +67,7 @@ void modifierProduit(void)
     fclose(F);
     printf("Entrez le code du produit : ");
     scanf("%s", code);
-    int i;
+    int i=0;
     F = fopen(FILE_PRODUIT , "w");
     if(F == NULL)
     {

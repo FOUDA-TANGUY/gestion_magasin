@@ -31,7 +31,7 @@ void saveVendeurs(FILE* F, vendeur* TAB,int nombre_vendeur)
 void ajouterVendeur(void)
 {
     vendeur v;
-    FILE *F=fopen(FILE_VENDEUR, "w");
+    FILE *F=fopen(FILE_VENDEUR, "a");
     if(F==NULL)
     {
         printf("Erreur d'ouverture %s", FILE_VENDEUR);
@@ -59,5 +59,37 @@ void modifierVendeur(void)
         printf("Erreur d'ouverture %s ", FILE_VENDEUR);
         exit(-1);
     }
-    
+    nombre_vendeur = getVendeurs(F , TAB);
+    fclose(F);
+    printf("Entrez le maricule du vendeur : ");
+    scanf("%s", matricule);
+    int i=0;
+    F=fopen(FILE_VENDEUR , "w");
+    if(F==NULL)
+    {
+        printf("Erreur d'ouverture %s ", FILE_VENDEUR);
+        exit(-1);
+    } 
+    trouver = false;
+    while((i<nombre_vendeur) && (!trouver))
+    {
+        if(strcmp(TAB[i].matricule_vendeur , matricule) == 0&&(!trouver))
+            trouver = true;
+        else
+            i++;
+    }
+    if(trouver)
+    {
+        printf("Modifier les donneees du vendeur %s \n\n", TAB[i].matricule_vendeur);
+        printf("Entrer le matricule du vendeur : ");
+        scanf("%s", TAB[i].matricule_vendeur);
+        printf("Entrez le nom du vendeu : ");
+        scanf("%s", TAB[i].nom_vendeur);
+        printf("Entrez le salaire du vendeur : ");
+        scanf("%d", &TAB[i].salaire);
+        saveVendeurs(F, TAB,nombre_vendeur);
+    }
+    else    
+        printf("Aucun vendeur n'est desiggner par ce matricule\n");
+    fclose(F);
 }
