@@ -65,7 +65,7 @@ void modifierCommande(void)
     }
     nombre_commande = getCommandes(F , TAB);
     fclose(F);
-    printf("Entrez le mnumero de la commande : ");
+    printf("Entrez le numero de la commande : ");
     scanf("%s", numero);
     int i=0;
     F=fopen(FILE_COMMANDE , "w");
@@ -77,13 +77,14 @@ void modifierCommande(void)
     trouver = false;
     while((i<nombre_commande) && (!trouver))
     {
-        if(strcmp(TAB[i].numero_commande , numero) == 0&&(!trouver))
+        if(strcmp(TAB[i].numero_commande , numero) ==0)
             trouver = true;
         else
             i++;
     }
     if(trouver)
     {
+        printf("Modifier la commande %s \n\n", TAB[i].numero_commande);
         printf("Entrer le numero de la commande : ");
         scanf("%s", TAB[i].numero_commande);
         printf("Entrez le numero du client : ");
