@@ -64,12 +64,6 @@ void modifierVendeur(void)
     printf("Entrez le maricule du vendeur : ");
     scanf("%s", matricule);
     int i=0;
-    F=fopen(FILE_VENDEUR , "w");
-    if(F==NULL)
-    {
-        printf("Erreur d'ouverture %s ", FILE_VENDEUR);
-        exit(-1);
-    } 
     trouver = false;
     while((i<nombre_vendeur) && (!trouver))
     {
@@ -87,10 +81,16 @@ void modifierVendeur(void)
         scanf("%s", TAB[i].nom_vendeur);
         printf("Entrez le salaire du vendeur : ");
         scanf("%d", &TAB[i].salaire);
-        saveVendeurs(F, TAB,nombre_vendeur);
     }
     else    
         printf("Aucun vendeur n'est desiggner par ce matricule\n");
+    F=fopen(FILE_VENDEUR , "w");
+    if(F==NULL)
+    {
+        printf("Erreur d'ouverture %s ", FILE_VENDEUR);
+        exit(-1);
+    } 
+    saveVendeurs(F, TAB,nombre_vendeur);
     fclose(F);
 }
 void supprimerVendeur(void)

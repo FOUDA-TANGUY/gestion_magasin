@@ -9,6 +9,7 @@ void saisirClient(FILE* F,client* c)
 {
     fprintf(F, "%s ; %s ; %s\n", c->numero_client,c->nom_client,c->adresse);
 }
+
 void lireClient(FILE* F, client* c)
 {
     fscanf(F, "%s ; %s ; %s", c->numero_client,c->nom_client,c->adresse);
@@ -43,7 +44,7 @@ void ajouterClient(void)
     printf("Entrez le nom du client : ");
     scanf("%s", c.nom_client);
     printf("%s", c.adresse);
-    saisirClient(F,&c);
+    saisirClientull(F,&c);
     fclose(F);
 }
 void modifierCLient(void)
@@ -63,12 +64,6 @@ void modifierCLient(void)
     fclose(F);
     printf("Entrez le numero du client : ");
     scanf("%s", numero);
-    F=fopen(FILE_CLIENT , "w");
-    if(F==NULL)
-    {
-        printf("Erreur d'ouverture %s ", FILE_CLIENT);
-        exit(-1);
-    }
     int i=0;
     trouver = false;
     while((i<nombre_client)&&(!trouver))
@@ -87,10 +82,17 @@ void modifierCLient(void)
         scanf("%s", TAB[i].nom_client);
         printf("Entrez l'adresse du client : ");
         scanf("%s", TAB[i].adresse);
-        saveClients(F, TAB,nombre_client);
     }
     else
         printf("Ce numero ne designe aucun de nos clients :( \n");
+    F=fopen(FILE_CLIENT , "w");
+    if(F==NULL)
+    {
+        printf("Erreur d'ouverture %s ", FILE_CLIENT);
+        exit(-1);
+    }
+    saveClients(F, TAB,nombre_client);
+    fclose(F);
 }
 void supprimerClient(void)
 {
@@ -115,9 +117,7 @@ void supprimerClient(void)
         exit(-1);
     }
     for(i=0 ; i<nombre_client ; i++)
-    {
         if(strcmp(TAB[i].numero_client , numero)==0)
             saveClients(F, TAB , nombre_client);
-    }
-    fclose(F);
+        fclose(F);
 }

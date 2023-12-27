@@ -69,13 +69,6 @@ void modifierProduit(void)
     printf("Entrez le code du produit : ");
     scanf("%s", code);
     int i=0;
-    F = fopen(FILE_PRODUIT , "w");
-    if(F == NULL)
-    {
-        printf("Erreur d'ouverture %s ", FILE_PRODUIT);
-        exit(-1);
-    }
-
     trouver = false;
     while((i<nombre_produit) && (!trouver))
     {
@@ -97,10 +90,16 @@ void modifierProduit(void)
         scanf("%d", &TAB[i].qte_seuil);
         printf("Entrez le prix du produit ; ");
         scanf("%d", &TAB[i].prix_unitaire);
-        saveProduits(F, TAB,nombre_produit);
     }
     else
         printf("Aucun produit ne porte le code designer\n");
+    F = fopen(FILE_PRODUIT , "w");
+    if(F == NULL)
+    {
+        printf("Erreur d'ouverture %s ", FILE_PRODUIT);
+        exit(-1);
+    }
+    saveProduits(F, TAB,nombre_produit);
     fclose(F);
 }
 void supprimerProduit(void)

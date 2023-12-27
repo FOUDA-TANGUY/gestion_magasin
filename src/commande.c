@@ -68,12 +68,6 @@ void modifierCommande(void)
     printf("Entrez le numero de la commande : ");
     scanf("%s", numero);
     int i=0;
-    F=fopen(FILE_COMMANDE , "w");
-    if(F==NULL)
-    {
-        printf("Erreur d'ouverture %s ", FILE_COMMANDE);
-        exit(-1);
-    } 
     trouver = false;
     while((i<nombre_commande) && (!trouver))
     {
@@ -93,10 +87,16 @@ void modifierCommande(void)
         scanf("%d", &TAB[i].quantite);
         printf("Entrez le matricule du vendeur : ");
         scanf("%s", TAB[i].matricule_vendeur);
-        saveCommandes(F, TAB,nombre_commande);
     }
     else    
         printf("Aucune commande ne porte ce numero :(\n");
+    F=fopen(FILE_COMMANDE , "w");
+    if(F==NULL)
+    {
+        printf("Erreur d'ouverture %s ", FILE_COMMANDE);
+        exit(-1);
+    } 
+    saveCommandes(F, TAB,nombre_commande);
     fclose(F);
 }
 void supprimerCommande(void)
