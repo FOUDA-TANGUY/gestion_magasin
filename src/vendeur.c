@@ -83,7 +83,7 @@ void modifierVendeur(void)
         scanf("%d", &TAB[i].salaire);
     }
     else    
-        printf("Aucun vendeur n'est desiggner par ce matricule\n");
+        printf("Aucun vendeur n'est designer par ce matricule\n");
     F=fopen(FILE_VENDEUR , "w");
     if(F==NULL)
     {
