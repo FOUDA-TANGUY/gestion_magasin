@@ -20,7 +20,7 @@ int getVendeurs(FILE* F,vendeur* TAB)
         lireVendeur(F, &TAB[nombre_vendeur]);
         nombre_vendeur++;
     }
-    return nombre_vendeur--;
+    return --nombre_vendeur;
 }
 void saveVendeurs(FILE* F, vendeur* TAB,int nombre_vendeur)
 {
