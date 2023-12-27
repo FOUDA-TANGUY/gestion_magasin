@@ -22,7 +22,7 @@ int getCommandes(FILE* F,commande* TAB)
         lireCommande(F, &TAB[nombre_commande]);
         nombre_commande++;
     }
-    return nombre_commande--;
+    return --nombre_commande;
 }
 void saveCommandes(FILE* F, commande* TAB,int nombre_commande)
 {

@@ -22,7 +22,7 @@ int getClients(FILE* F,client* TAB)
         lireClient(F, &TAB[nombre_client]);
         nombre_client++;
     }
-    return nombre_client--;
+    return --nombre_client;
 }
 void saveClients(FILE* F, client* TAB,int nombre_client)
 {
