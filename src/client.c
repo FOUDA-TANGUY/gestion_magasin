@@ -9,7 +9,7 @@ void saisirClient(FILE* F,client* c)
 {
     fprintf(F, "%s ; %s ; %s\n", c->numero_client,c->nom_client,c->adresse);
 }
-lireClient(FILE* F, client* c)
+void lireClient(FILE* F, client* c)
 {
     fscanf(F, "%s ; %s ; %s", c->numero_client,c->nom_client,c->adresse);
 }
