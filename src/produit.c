@@ -64,6 +64,7 @@ void modifierProduit(void)
         exit(-1);
     }
     nombre_produit = getProduits(F, TAB);
+    printf("%d\n",nombre_produit);
     fclose(F);
     printf("Entrez le code du produit : ");
     scanf("%s", code);
