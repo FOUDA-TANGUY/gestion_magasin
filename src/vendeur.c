@@ -20,7 +20,7 @@ int getVendeurs(FILE* F,vendeur* TAB)
         lireVendeur(F, &TAB[nombre_vendeur]);
         nombre_vendeur++;
     }
-    return --nombre_vendeur;
+    return nombre_vendeur;
 }
 void saveVendeurs(FILE* F, vendeur* TAB,int nombre_vendeur)
 {
@@ -31,11 +31,15 @@ void saveVendeurs(FILE* F, vendeur* TAB,int nombre_vendeur)
 void ajouterVendeur(void)
 {
     vendeur v;
-    FILE *F=fopen(FILE_VENDEUR, "a");
+    FILE* F=fopen(FILE_VENDEUR , "a");
     if(F==NULL)
     {
-        printf("Erreur d'ouverture %s", FILE_VENDEUR);
-        exit(-1);
+        F=fopen(FILE_VENDEUR , "w");
+        if(F==NULL)
+        {
+            printf("Erruer d'ouverture %s ", FILE_VENDEUR);
+            exit(-1);
+        }
     }
     printf("Entrez le matricule du vendeur : ");
     scanf("%s", v.matricule_vendeur);
@@ -117,6 +121,6 @@ void supprimerVendeur(void)
     }
     for(i=0 ; i<nombre_vendeur ; i++)
         if(strcmp(TAB[i].matricule_vendeur , matricule)!=0)
-            saveVendeurs(F, TAB,nombre_vendeur);
+            saisirVendeur(F, &TAB[i]);
     fclose(F);
 }

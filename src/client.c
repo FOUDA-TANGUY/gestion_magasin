@@ -22,7 +22,7 @@ int getClients(FILE* F,client* TAB)
         lireClient(F, &TAB[nombre_client]);
         nombre_client++;
     }
-    return --nombre_client;
+    return nombre_client;
 }
 void saveClients(FILE* F, client* TAB,int nombre_client)
 {
@@ -36,8 +36,12 @@ void ajouterClient(void)
     FILE* F=fopen(FILE_CLIENT, "a");
     if(F==NULL)
     {
-        printf("Erreur d'ouverture %s ", FILE_CLIENT);
-        exit(-1);
+        F=fopen(FILE_CLIENT, "w");
+        if(F==NULL)
+        {
+            printf("Erreur d'ouverture %s ", FILE_CLIENT);
+            exit(-1);
+        }
     }
     printf("Entrez le numero du client : ");
     scanf("%s", c.numero_client);
@@ -119,7 +123,7 @@ void supprimerClient(void)
     for(i=0 ; i<nombre_client ; i++)
     {   
         if(strcmp(TAB[i].numero_client , numero)==0)
-            saveClients(F, TAB , nombre_client);
+            saisirClient(F, &TAB[i]);
     }
     fclose(F);
 }

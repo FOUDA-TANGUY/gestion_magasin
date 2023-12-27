@@ -50,7 +50,7 @@ void gestionArticle(void)
 }
 void gestionClients(void)
 {
-    /*int choix_user = 0;
+    int choix_user = 0;
     system("clear");
     do
     {
@@ -85,7 +85,7 @@ void gestionClients(void)
             break;
         }
 
-    } while (choix_user != 0);*/
+    } while (choix_user != 0);
 }
 void gestionVendeur(void)
 {
@@ -128,7 +128,7 @@ void gestionVendeur(void)
 }
 void gestionCommande(void)
 {
-    /*int choix_user = 0;
+    int choix_user = 0;
     system("clear");
     do
     {
@@ -163,7 +163,7 @@ void gestionCommande(void)
             break;
         }
 
-    } while (choix_user != 0);*/
+    } while (choix_user != 0);
 }
 void etablirFActure(void)
 {

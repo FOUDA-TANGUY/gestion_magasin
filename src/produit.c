@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <outil.h>
 #include <produit.h>
-#include<string.h>
+#include <string.h>
 
 // partie implementation des fonction du client
 void saisirProduit(FILE* F,produit* p)
@@ -21,7 +21,7 @@ int getProduits(FILE* F,produit* TAB)
         lireProduit(F, &TAB[nombre_produit]);
         nombre_produit++;
     }
-    return --nombre_produit;
+    return nombre_produit;
 }
 void saveProduits(FILE* F, produit* TAB,int nombre_produit)
 {
@@ -32,11 +32,16 @@ void saveProduits(FILE* F, produit* TAB,int nombre_produit)
 void ajouterProduit(void)
 {
     produit p;
-    FILE *F=fopen(FILE_PRODUIT, "a");
+    
+    FILE* F=fopen(FILE_PRODUIT , "a");
     if(F==NULL)
     {
-        printf("Erreur d'ouverture : %s\n", FILE_PRODUIT);
-        exit(-1);
+        F=fopen(FILE_PRODUIT , "w");
+        if(F==NULL)
+        {
+            printf("Erruer d'ouverture %s ", FILE_PRODUIT);
+            exit(-1);
+        }
     }
     printf("Entrez le code du produit : ");
     scanf("%s", p.code);
@@ -65,6 +70,7 @@ void modifierProduit(void)
     }
     nombre_produit = getProduits(F, TAB);
     fclose(F);
+    printf("nombre %d\n",nombre_produit);
     printf("Entrez le code du produit : ");
     scanf("%s", code);
     int i=0;
@@ -125,6 +131,6 @@ void supprimerProduit(void)
     }
     for(i=0 ; i<nombre_produit ; i++)
         if(strcmp(TAB[i].code , code)!=0)
-            saveProduits(F, TAB,nombre_produit);
+            saisirProduit(F, &TAB[i]);
     fclose(F);
 }

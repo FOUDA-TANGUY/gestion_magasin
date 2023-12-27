@@ -22,7 +22,7 @@ int getCommandes(FILE* F,commande* TAB)
         lireCommande(F, &TAB[nombre_commande]);
         nombre_commande++;
     }
-    return --nombre_commande;
+    return nombre_commande;
 }
 void saveCommandes(FILE* F, commande* TAB,int nombre_commande)
 {
@@ -33,11 +33,15 @@ void saveCommandes(FILE* F, commande* TAB,int nombre_commande)
 void ajouterCommande(void)
 {
     commande p;
-    FILE* F=fopen(FILE_COMMANDE , "w");
+    FILE* F=fopen(FILE_COMMANDE , "a");
     if(F==NULL)
     {
-        printf("Erruer d'ouverture %s ", FILE_COMMANDE);
-        exit(-1);
+        F=fopen(FILE_COMMANDE , "w");
+        if(F==NULL)
+        {
+            printf("Erruer d'ouverture %s ", FILE_COMMANDE);
+            exit(-1);
+        }
     }
     printf("Entrer le numero de la commande : ");
     scanf("%s", p.numero_commande);
@@ -123,6 +127,6 @@ void supprimerCommande(void)
     }
     for(i=0 ; i<nombre_commande ; i++)
         if(strcmp(TAB[i].numero_commande , numero)!=0)
-            saveCommandes(F, TAB,nombre_commande);
+            saisirCommande(F, &TAB[i]);
     fclose(F);
 }
