@@ -44,7 +44,7 @@ void ajouterClient(void)
     printf("Entrez le nom du client : ");
     scanf("%s", c.nom_client);
     printf("%s", c.adresse);
-    saisirClientull(F,&c);
+    saisirClient(F,&c);
     fclose(F);
 }
 void modifierCLient(void)
@@ -117,7 +117,9 @@ void supprimerClient(void)
         exit(-1);
     }
     for(i=0 ; i<nombre_client ; i++)
+    {   
         if(strcmp(TAB[i].numero_client , numero)==0)
             saveClients(F, TAB , nombre_client);
-        fclose(F);
+    }
+    fclose(F);
 }

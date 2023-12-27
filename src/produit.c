@@ -21,7 +21,7 @@ int getProduits(FILE* F,produit* TAB)
         lireProduit(F, &TAB[nombre_produit]);
         nombre_produit++;
     }
-    return nombre_produit--;
+    return --nombre_produit;
 }
 void saveProduits(FILE* F, produit* TAB,int nombre_produit)
 {
@@ -64,7 +64,6 @@ void modifierProduit(void)
         exit(-1);
     }
     nombre_produit = getProduits(F, TAB);
-    printf("%d\n",nombre_produit);
     fclose(F);
     printf("Entrez le code du produit : ");
     scanf("%s", code);
