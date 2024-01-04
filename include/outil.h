@@ -9,6 +9,7 @@ typedef enum bool
 }bool;
 void etablirFActure(const char*);
 void affichage(void);
+void affichage2(void)
 #define MAX 15
 #define SIZE 1000
 

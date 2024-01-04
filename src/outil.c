@@ -19,7 +19,7 @@ void etablirFActure(const char* commande)
     {
         for(j=0 ; j<SIZE ; j++)
         {
-
+        
         }
     }
 }
@@ -27,6 +27,10 @@ void affichage(void)
 {
     client c;
     printf("%11s\n%11s\n%11s\n", c.numero_client,c.nom_client,c.adresse);
+}
+void affichage2(void)
+{
+    
 }
 har numero_client[MAX];
     char nom_client[MAX];
