@@ -9,8 +9,5 @@ typedef enum bool
 {
     false,true
 }bool;
-void etablirFActure(const char*);
-void affichage(void);
-void affichage2(void)
 
 #endif

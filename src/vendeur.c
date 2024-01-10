@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <outil.h>
 #include <vendeur.h>
-#include<string.h>
+#include <string.h>
 
 void saisirVendeur(FILE* F,vendeur* v)
 {

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <outil.h>
 #include <client.h>
-#include<string.h>
+#include <string.h>
 
 // partie implementation des fonction du client
 void saisirClient(FILE* F,client* c)
