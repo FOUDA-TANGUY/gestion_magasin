@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <outil.h>
 #include <commande.h>
-#include<string.h>
+#include <string.h>
 
 // partie implementation des fonction du client
 
@@ -56,7 +56,7 @@ void ajouterCommande(void)
 }
 void modifierCommande(void)
 {
-    commande TAB[SIZE];
+    commande TAB[MAX_SIZE];
     char numero[MAX];
     bool trouver;
     int nombre_commande;
@@ -105,7 +105,7 @@ void modifierCommande(void)
 }
 void supprimerCommande(void)
 {
-    commande TAB[SIZE];
+    commande TAB[MAX_SIZE];
     char numero[MAX];
     int nombre_commande;
     FILE* F=fopen(FILE_COMMANDE, "r");

@@ -7,7 +7,7 @@ void gestionArticle(void);
 void gestionClients(void);
 void gestionVendeur(void);
 void gestionCommande(void);
-void etablirFActure(void);
+void etablirFacture(void);
 void approvisionnement(void);
 void paieVendeur(void);
 

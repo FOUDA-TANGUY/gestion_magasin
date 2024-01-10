@@ -165,7 +165,7 @@ void gestionCommande(void)
 
     } while (choix_user != 0);
 }
-void etablirFActure(void)
+void etablirFacture(void)
 {
     printf("comming soon \n");
 }

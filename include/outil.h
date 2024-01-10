@@ -1,6 +1,8 @@
 #ifndef __OUTIL__H__
 #define __OUTIL__H__
 #define SIZE 5
+#define MAX 15
+#define MAX_SIZE 1000
 
 // fonction et outil necessaire pour le projet
 typedef enum bool
@@ -10,7 +12,5 @@ typedef enum bool
 void etablirFActure(const char*);
 void affichage(void);
 void affichage2(void)
-#define MAX 15
-#define SIZE 1000
 
 #endif

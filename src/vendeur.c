@@ -52,7 +52,7 @@ void ajouterVendeur(void)
 }
 void modifierVendeur(void)
 {
-    vendeur TAB[SIZE];
+    vendeur TAB[MAX_SIZE];
     char matricule[MAX];
     bool trouver;
     int nombre_vendeur;
@@ -99,7 +99,7 @@ void modifierVendeur(void)
 }
 void supprimerVendeur(void)
 {
-    vendeur TAB[SIZE];
+    vendeur TAB[MAX_SIZE];
     char matricule[MAX];
     int nombre_vendeur;
     FILE* F=fopen(FILE_VENDEUR, "r");

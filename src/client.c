@@ -53,7 +53,7 @@ void ajouterClient(void)
 }
 void modifierCLient(void)
 {
-    client TAB[SIZE];
+    client TAB[MAX_SIZE];
     char numero[MAX];
     bool trouver;
     int nombre_client;
@@ -100,7 +100,7 @@ void modifierCLient(void)
 }
 void supprimerClient(void)
 {
-    client TAB[SIZE];
+    client TAB[MAX_SIZE];
     char numero[MAX];
     int nombre_client;
     FILE* F=fopen(FILE_CLIENT, "r");

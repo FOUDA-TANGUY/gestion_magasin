@@ -39,7 +39,7 @@ int main(void)
             break;
         case 5:
             system("clear");
-            etablirFActure();
+            etablirFacture();
             break;
         case 6:
             system("clear");

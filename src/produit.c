@@ -58,7 +58,7 @@ void ajouterProduit(void)
 }
 void modifierProduit(void)
 {
-    produit TAB[SIZE];
+    produit TAB[MAX_SIZE];
     char code[MAX];
     bool trouver;
     int nombre_produit;
@@ -109,7 +109,7 @@ void modifierProduit(void)
 }
 void supprimerProduit(void)
 {
-    produit TAB[SIZE];
+    produit TAB[MAX_SIZE];
     char code[MAX];
     int nombre_produit;
     FILE* F=fopen(FILE_PRODUIT, "r");
