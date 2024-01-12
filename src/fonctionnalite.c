@@ -15,10 +15,22 @@ void gestionArticle(void)
     system("clear");
     do
     {
-        printf(" 01 - Ajouter Article\n");
-        printf(" 02 - Modifier Article\n");
-        printf(" 03 - Supprimer Article\n");
-        printf(" 00 - Retour\n");
+        entete("GESTION-ARTICLE",100);
+        option("01","Ajouter Article",100);
+        option("02","Modifier Article",100);
+        option("03","Supprimer Article",100);
+        option("00","Retour",100);
+        printf("+");
+        dessiner('-',98);
+        printf("+\n");
+
+        if(choix_user < 0 || choix_user > 3)
+        {
+            dessiner(' ',30);
+            printf("Option invalide !!\n");
+        }   
+        dessiner(' ',30);
+        printf("Choisir : ");
 
         scanf("%d",&choix_user);
 
@@ -54,11 +66,23 @@ void gestionClients(void)
     system("clear");
     do
     {
-        printf(" 01 - Ajouter Client\n");
-        printf(" 02 - Modifier Client\n");
-        printf(" 03 - Supprimer Client\n");
-        printf(" 00 - Retour\n");
+        entete("GESTION-CLIENTS",100);
+        option("01","Ajouter Client",100);
+        option("02","Modifier Client",100);
+        option("03","Supprimer Client",100);
+        option("00","Retour",100);
+        printf("+");
+        dessiner('-',98);
+        printf("+\n");
 
+
+        if(choix_user < 0 || choix_user > 3)
+        {
+            dessiner(' ',30);
+            printf("Option invalide !!\n");
+        }   
+        dessiner(' ',30);
+        printf("Choisir : ");
         scanf("%d",&choix_user);
 
         switch (choix_user)
@@ -93,10 +117,23 @@ void gestionVendeur(void)
     system("clear");
     do
     {
-        printf(" 01 - Ajouter Vendeur\n");
-        printf(" 02 - Modifier Vendeur\n");
-        printf(" 03 - Supprimer Vendeur\n");
-        printf(" 00 - Retour\n");
+        entete("GESTION-VENDEURR",100);
+        option("01","Ajouter Vendeur",100);
+        option("02","Modifier Vendeur",100);
+        option("03","Supprimer Vendeur",100);
+        option("00","Retour",100);
+        printf("+");
+        dessiner('-',98);
+        printf("+\n");
+
+
+        if(choix_user < 0 || choix_user > 3)
+        {
+            dessiner(' ',30);
+            printf("Option invalide !!\n");
+        }   
+        dessiner(' ',30);
+        printf("Choisir : ");
 
         scanf("%d",&choix_user);
 
@@ -132,11 +169,23 @@ void gestionCommande(void)
     system("clear");
     do
     {
-        printf(" 01 - Ajouter Commande\n");
-        printf(" 02 - Modifier Commande\n");
-        printf(" 03 - Supprimer Commande\n");
-        printf(" 00 - Retour\n");
+        entete("GESTION-COMMANDE",100);
+        option("01","Ajouter Commande",100);
+        option("02","Modifier Commande",100);
+        option("03","Supprimer Commande",100);
+        option("00","Retour",100);
+        printf("+");
+        dessiner('-',98);
+        printf("+\n");
 
+
+        if(choix_user < 0 || choix_user > 3)
+        {
+            dessiner(' ',30);
+            printf("Option invalide !!\n");
+        }   
+        dessiner(' ',30);
+        printf("Choisir : ");
         scanf("%d",&choix_user);
 
         switch (choix_user)

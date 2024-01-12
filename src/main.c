@@ -6,19 +6,30 @@
 int main(void)
 {
     int choix_user = 0;
+
     system("clear");
     do
     {
-        entete("GESTION-MAGASIN\0",95);
-        printf(" 01 - Gestion Articles\n");
-        printf(" 02 - Gestion Clients\n");
-        printf(" 03 - Gestion Vendeurs\n");
-        printf(" 04 - Gestion Commmandes\n");
-        printf(" 05 - Service facture\n");
-        printf(" 06 - Approvisionnement \n");
-        printf(" 07 - Paie Vendeur\n");
-        printf(" 00 - Quitter\n");
+        entete("GESTION-MAGASIN\0",100);
+        option("01","Gestion Articles",100);
+        option("02","Gestion Clients",100);
+        option("03","Gestion Vendeurs",100);
+        option("04","Gestion Commmandes",100);
+        option("05","Service facture",100);
+        option("06","Approvisionnement",100);
+        option("07","Paie Vendeur",100);
+        option("00","Quitter",100);
+        printf("+");
+        dessiner('-',98);
+        printf("+\n");
 
+        if(choix_user < 0 || choix_user > 10)
+        {
+            dessiner(' ',30);
+            printf("Option invalide !!\n");
+        }   
+        dessiner(' ',30);
+        printf("Choisir : ");
         scanf("%d",&choix_user);
 
         switch (choix_user)
@@ -58,7 +69,7 @@ int main(void)
             break;
 
         default:
-            printf("Option invalide !!\n");
+            system("clear");
             break;
         }
 

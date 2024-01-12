@@ -16,12 +16,21 @@ void entete(const char* titre,int longuer)
     dessiner('#',longuer - 2);
     printf("+\n");
     printf("|");
-    dessiner(' ',(longuer - 2 - 15)/2);
-    printf("%15s",titre);
-    dessiner(' ',(longuer - 2 - 15)/2);
+    dessiner(' ',(longuer - 2 - 20)/2);
+    printf("%20s",titre);
+    dessiner(' ',(longuer - 2 - 20)/2);
     printf("|\n");
     printf("+");
     dessiner('#',longuer - 2);
     printf("+\n");
-    
+}
+
+void option(const char* num,const char* titre, int taille)
+{
+    printf("|");
+    dessiner(' ',30);
+    printf("%5s",num);
+    printf("%25s",titre);
+    dessiner(' ',taille - 62);
+    printf("|\n");
 }
