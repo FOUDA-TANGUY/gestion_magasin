@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <outil.h>
 #include <fonctionnalite.h>
 
 int main(void)
@@ -8,6 +9,7 @@ int main(void)
     system("clear");
     do
     {
+        entete("GESTION-MAGASIN\0",95);
         printf(" 01 - Gestion Articles\n");
         printf(" 02 - Gestion Clients\n");
         printf(" 03 - Gestion Vendeurs\n");

@@ -11,5 +11,6 @@ typedef enum bool
 }bool;
 
 void dessiner(const char, int); 
+void entete(const char*,int);
 
 #endif
