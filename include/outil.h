@@ -10,4 +10,6 @@ typedef enum bool
     false,true
 }bool;
 
+void dessiner(const char, int); 
+
 #endif

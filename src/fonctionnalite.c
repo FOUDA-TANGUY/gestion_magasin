@@ -167,7 +167,14 @@ void gestionCommande(void)
 }
 void etablirFacture(void)
 {
-    printf("comming soon \n");
+    int i;
+    printf("+");
+    for(i = 0; i < 8; i++)
+    {
+        dessiner('-',10);
+        printf("+"); 
+    }
+    printf("\n");
 }
 void approvisionnement(void)
 {
