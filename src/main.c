@@ -7,9 +7,9 @@ int main(void)
 {
     int choix_user = 0;
 
-    system("clear");
     do
     {
+        system("clear");
         entete("GESTION-MAGASIN\0",100);
         option("01","Gestion Articles",100);
         option("02","Gestion Clients",100);

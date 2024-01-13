@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <outil.h>
 #include <client.h>
 #include <commande.h>
@@ -216,14 +217,41 @@ void gestionCommande(void)
 }
 void etablirFacture(void)
 {
-    int i;
-    printf("+");
-    for(i = 0; i < 8; i++)
+    char numero_commande[MAX];
+    commande coma[MAX_SIZE];
+    produit pros[MAX_SIZE];
+    client cliens[MAX_SIZE];
+    vendeur vends[MAX_SIZE];
+
+    getClients(FILE_CLIENT,cliens);
+    int nombre_commande = getCommandes(FILE_VENDEUR,coma);
+
+
+
+    FILE *file;
+    entete("FACTURE",100);
+    printf("Entre numero commande :");
+    scanf("%s",numero_commande);
+    int i=0;
+    while ((i < nombre_commande) && (strcmp(numero_commande,coma[i].numero_commande) != 0))
+        i++;
+        
+    if(strcmp(numero_commande,coma[i].numero_commande) == 0)
     {
-        dessiner('-',10);
-        printf("+"); 
+        int numero_client = getClients(FILE_CLIENT,cliens);
+        int nombre_produit = getProduits(FILE_PRODUIT,pros);
+        int nombre_vendeur = getVendeurs(FILE_VENDEUR,vends);
+
     }
-    printf("\n");
+    else
+    {
+        entete("FACTURE",100);
+        entete("COMMANDE NOT FOND !",100);
+    }
+
+    entete("FACTURE",100);
+
+
 }
 void approvisionnement(void)
 {
